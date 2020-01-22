@@ -19,5 +19,8 @@
   "homepage": "https://github.com/fabioaromanini/trampo-certo-rating#readme",
   "devDependencies": {
     "serverless": "^1.61.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.608.0"
   }
 }
