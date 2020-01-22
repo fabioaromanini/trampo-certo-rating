@@ -74,7 +74,7 @@ Expected Response is status code 201
 - ~~Automate deploys with circle-ci~~
 - ~~Persist rates in DynamoDB table~~
 - ~~Endpoint for rates update/creation~~
-- ~~Persist and list rates history by CPF
+- ~~Persist and list rates history by CPF~~
 
 ## Done
 
