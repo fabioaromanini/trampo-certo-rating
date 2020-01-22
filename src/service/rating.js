@@ -18,7 +18,7 @@ module.exports = {
       })
       .promise();
     if (response.Items.length === 0) {
-      return 'unkown';
+      return history ? [] : 'unkown';
     }
 
     if (history) {
