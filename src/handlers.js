@@ -23,7 +23,7 @@ module.exports = {
       return {
         statusCode,
         body,
-        corsHeaders,
+        headers: corsHeaders,
       };
     }
   },
