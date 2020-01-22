@@ -29,9 +29,9 @@ _This rating is completely random_
 **Extra**
 
 - Validate CPF number with third-party lib
-- Persist rates in DynamoDB table
-- Endpoint for rates update/creation
 - Persist rates queries in DynamoDB
+- ~~Persist rates in DynamoDB table~~
+- ~~Endpoint for rates update/creation~~
 - ~~Automate deploys with circle-ci~~
 
 ## Done
@@ -39,3 +39,5 @@ _This rating is completely random_
 1. Add serverless config
 2. Automate deploys with circle-ci
 3. Endpoint for querying CPF random rates
+4. Persist rates in DynamoDB table
+5. Endpoint for rates update/creation
