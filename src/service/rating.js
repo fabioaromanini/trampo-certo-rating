@@ -3,16 +3,29 @@ const AWS = require('aws-sdk');
 const dbClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports = {
-  getRatingByCpf: async cpf => {
+  getRatingsByCpf: async (cpf, history) => {
     const response = await dbClient
-      .get({
+      .query({
         TableName: process.env.RATINGS_BY_CPF_TABLE,
-        Key: { cpf },
+        KeyConditionExpression: '#c = :cpf',
+        ExpressionAttributeNames: {
+          '#c': 'cpf',
+        },
+        ExpressionAttributeValues: {
+          ':cpf': cpf,
+        },
+        ScanIndexForward: false,
       })
       .promise();
-    if (response.Item) {
-      return response.Item.rating;
-    } else return 'unknown';
+    if (response.Items.length === 0) {
+      return 'unkown';
+    }
+
+    if (history) {
+      return response.Items.map(item => ({ rating: item.rating, createdAt: item.createdAt }));
+    } else {
+      return response.Items[0].rating;
+    }
   },
   setRatingForCpf: async (cpf, rating) => {
     const timestamp = new Date().toISOString();

@@ -3,13 +3,13 @@ const ratingService = require('../service/rating');
 const validRatings = ['good', 'bad'];
 
 module.exports = {
-  getRatingByCpf: async cpf => {
+  getRatingsByCpf: async (cpf, history) => {
     if (!cpf) {
       throw new Error('400');
     }
     return {
       cpf,
-      rating: await ratingService.getRatingByCpf(cpf),
+      rating: await ratingService.getRatingsByCpf(cpf, history),
     };
   },
   setRatingForCpf: async (cpf, rating) => {

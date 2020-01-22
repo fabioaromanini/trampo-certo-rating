@@ -9,8 +9,8 @@ module.exports = {
   cpfQuery: async event => {
     let body, statusCode;
     try {
-      const { cpf } = event.queryStringParameters;
-      const ratingByCpf = await ratingController.getRatingByCpf(cpf);
+      const { cpf, history } = event.queryStringParameters;
+      const ratingByCpf = await ratingController.getRatingsByCpf(cpf, history);
 
       statusCode = 200;
       body = JSON.stringify(ratingByCpf);
