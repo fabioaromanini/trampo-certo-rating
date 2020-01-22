@@ -1,6 +1,8 @@
 # Trampo Certo Rating
 
-Rest API that randomly rates valid CPFs (SSN-like document for brazilians).
+[![CircleCI](https://circleci.com/gh/fabioaromanini/trampo-certo-rating.svg?style=svg)](https://circleci.com/gh/fabioaromanini/trampo-certo-rating)
+
+Rest API that allows fake rates retrieval for valid CPFs (SSN-like document for brazilians).
 
 ## TODO
 
