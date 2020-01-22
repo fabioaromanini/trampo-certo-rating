@@ -1,0 +1,16 @@
+service: trampo-certo-rating
+
+frameworkVersion: '>=1.1.0 <2.0.0'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  cpfQuery:
+    handler: src/handlers.cpfQuery
+    events:
+      - http:
+          path: cpf_query
+          method: get
+          cors: true
