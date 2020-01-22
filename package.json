@@ -1,0 +1,20 @@
+{
+  "name": "trampo-certo-rating",
+  "version": "0.0.1",
+  "description": "Rest API that randomly rates valid CPFs (SSN-like document for brazilians).",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "sls deploy -v",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabioaromanini/trampo-certo-rating.git"
+  },
+  "author": "fabioaromanini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabioaromanini/trampo-certo-rating/issues"
+  },
+  "homepage": "https://github.com/fabioaromanini/trampo-certo-rating#readme"
+}
