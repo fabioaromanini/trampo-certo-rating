@@ -6,21 +6,45 @@ Rest API that allows fake rates retrieval for valid CPFs (SSN-like document for 
 
 ### Endpoints
 
-CPF Query
+**CPF Query**
 
 GET
-https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_NUMBER>
+https://fpzksjskka.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_NUMBER>&history=true
 
 Expected Response:
+
+if history is true
 
 ```json
 {
   "cpf": "<CPF-NUMBER>",
-  "ratings": "good|bad|unknown"
+  "rating": "good|bad|unknown"
 }
 ```
 
-Set Ratings for CPF
+if history false or undefined
+
+```json
+{
+  "cpf": "<CPF-NUMBER>",
+  "rating": [
+    {
+      "rating": "bad|good",
+      "createdAt": "ISO DATE"
+    },
+    {
+      "rating": "good|bad",
+      "createdAt": "ISO DATE"
+    },
+    {
+      "rating": "good|bad",
+      "createdAt": "ISO DATE"
+    }
+  ]
+}
+```
+
+**Set Ratings for CPF**
 
 POST
 https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/ratings
