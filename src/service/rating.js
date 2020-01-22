@@ -14,4 +14,14 @@ module.exports = {
       return response.Item.rating;
     } else return 'unknown';
   },
+  setRatingForCpf: async (cpf, rating) => {
+    const timestamp = new Date().getTime();
+
+    return dbClient
+      .put({
+        TableName: process.env.RATINGS_BY_CPF_TABLE,
+        Item: { cpf, rating, createdAt: timestamp },
+      })
+      .promise();
+  },
 };
