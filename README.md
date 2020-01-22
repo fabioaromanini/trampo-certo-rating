@@ -13,7 +13,7 @@ https://fpzksjskka.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_N
 
 Expected Response:
 
-if history is true
+if history set to false or undefined
 
 ```json
 {
@@ -22,7 +22,7 @@ if history is true
 }
 ```
 
-if history false or undefined
+if history is set to true
 
 ```json
 {
