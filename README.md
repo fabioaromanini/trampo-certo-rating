@@ -4,8 +4,11 @@
 
 Rest API that allows fake rates retrieval for valid CPFs (SSN-like document for brazilians).
 
-Query Endpoint
+### Endpoints
 
+CPF Query
+
+GET
 https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_NUMBER>
 
 Expected Response:
@@ -17,7 +20,21 @@ Expected Response:
 }
 ```
 
-_This rating is completely random_
+Set Ratings for CPF
+
+POST
+https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/ratings
+
+Expected input:
+
+```json
+{
+  "cpf": "<CPF-NUMBER>",
+  "ratings": "good|bad"
+}
+```
+
+Expected Response is status code 201
 
 ## TODO
 
