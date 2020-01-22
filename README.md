@@ -47,9 +47,10 @@ Expected Response is status code 201
 
 - Validate CPF number with third-party lib
 - Persist rates queries in DynamoDB
+- ~~Automate deploys with circle-ci~~
 - ~~Persist rates in DynamoDB table~~
 - ~~Endpoint for rates update/creation~~
-- ~~Automate deploys with circle-ci~~
+- Keep ratings history
 
 ## Done
 
