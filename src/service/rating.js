@@ -15,7 +15,7 @@ module.exports = {
     } else return 'unknown';
   },
   setRatingForCpf: async (cpf, rating) => {
-    const timestamp = new Date().getTime();
+    const timestamp = new Date().toISOString();
 
     return dbClient
       .put({

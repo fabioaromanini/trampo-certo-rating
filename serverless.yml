@@ -12,9 +12,7 @@ provider:
     - Effect: Allow
       Action:
         - dynamodb:PutItem
-        - dynamodb:GetItem
-        - dynamodb:DeleteItem
-        - dynamodb:Scan
+        - dynamodb:Query
       Resource: 'arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.ratingsByCpfTableName}'
 
 functions:
@@ -45,9 +43,13 @@ resources:
         AttributeDefinitions:
           - AttributeName: cpf
             AttributeType: S
+          - AttributeName: createdAt
+            AttributeType: S
         KeySchema:
           - AttributeName: cpf
             KeyType: HASH
+          - AttributeName: createdAt
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
