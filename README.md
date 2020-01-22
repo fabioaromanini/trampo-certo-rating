@@ -6,7 +6,7 @@ Rest API that randomly rates valid CPFs (SSN-like document for brazilians).
 
 **Core**
 
-- Add serverless config
+- ~~Add serverless config~~
 - Endpoint for querying CPF rate
 
 **Extra**
@@ -16,3 +16,7 @@ Rest API that randomly rates valid CPFs (SSN-like document for brazilians).
 - Endpoint for rates update/creation
 - Persist rates queries in DynamoDB
 - Automate deploys with travis-ci
+
+## Done
+
+1. Add serverless config
