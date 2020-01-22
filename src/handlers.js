@@ -1,9 +1,9 @@
 module.exports = {
   cpfQuery: async event => {
-    console.log(event);
+    const { cpf } = event.queryStringParameters;
     return {
       statusCode: 200,
-      body: 'foo',
+      body: cpf,
     };
   },
 };
