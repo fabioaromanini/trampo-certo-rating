@@ -4,12 +4,27 @@
 
 Rest API that allows fake rates retrieval for valid CPFs (SSN-like document for brazilians).
 
+Query Endpoint
+
+https://qvdbscsen0.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_NUMBER>
+
+Expected Response:
+
+```json
+{
+  "cpf": "<CPF-NUMBER>",
+  "ratings": "good|bad|unknown"
+}
+```
+
+_This rating is completely random_
+
 ## TODO
 
 **Core**
 
 - ~~Add serverless config~~
-- Endpoint for querying CPF rate
+- Endpoint for querying CPF random rates
 
 **Extra**
 
