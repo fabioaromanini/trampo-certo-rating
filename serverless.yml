@@ -15,3 +15,23 @@ functions:
           path: cpf_query
           method: get
           cors: true
+
+custom:
+  ratingsByCpfTableName: ${self:provider.stage}-ratings-by-cpf
+
+resources:
+  Resources:
+    RatingsByCpfTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: cpf
+            AttributeType: S
+        KeySchema:
+          - AttributeName: cpf
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:custom.ratingsByCpfTableName}
