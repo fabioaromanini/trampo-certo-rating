@@ -13,7 +13,7 @@ module.exports = {
       statusCode = 200;
       body = JSON.stringify(cpfController.getCpfRating(cpf));
     } catch (e) {
-      if (!event.queryStringParameters || !event.queryStringParameters.cpf) {
+      if (!event.queryStringParameters || e.message === '400') {
         statusCode = 400;
         body = 'Missing CPF in query string';
       } else {
