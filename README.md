@@ -15,8 +15,9 @@ Rest API that randomly rates valid CPFs (SSN-like document for brazilians).
 - Persist rates in DynamoDB table
 - Endpoint for rates update/creation
 - Persist rates queries in DynamoDB
-- Automate deploys with travis-ci
+- ~~Automate deploys with circle-ci~~
 
 ## Done
 
 1. Add serverless config
+2. Automate deploys with circle-ci
