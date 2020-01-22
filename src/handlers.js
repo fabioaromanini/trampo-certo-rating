@@ -1,4 +1,4 @@
-const cpfController = require('./controller/cpf');
+const ratingController = require('./controller/rating');
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -11,7 +11,7 @@ module.exports = {
     try {
       const { cpf } = event.queryStringParameters;
       statusCode = 200;
-      body = JSON.stringify(cpfController.getCpfRating(cpf));
+      body = JSON.stringify(ratingController.getRatingByCpf(cpf));
     } catch (e) {
       if (!event.queryStringParameters || e.message === '400') {
         statusCode = 400;
