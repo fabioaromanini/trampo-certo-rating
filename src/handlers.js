@@ -1,24 +1,30 @@
 const cpfController = require('./controller/cpf');
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Credentials': true,
+};
+
 module.exports = {
   cpfQuery: async event => {
+    let body, statusCode;
     try {
       const { cpf } = event.queryStringParameters;
-      return {
-        statusCode: 200,
-        body: JSON.stringify(cpfController.getCpfRating(cpf)),
-      };
+      statusCode = 200;
+      body = JSON.stringify(cpfController.getCpfRating(cpf));
     } catch (e) {
       if (!event.queryStringParameters || !event.queryStringParameters.cpf) {
-        return {
-          statusCode: 400,
-          body: 'Missing CPF in query string',
-        };
+        statusCode = 400;
+        body = 'Missing CPF in query string';
       } else {
-        return {
-          statusCode: 500,
-        };
+        statusCode = 500;
       }
+    } finally {
+      return {
+        statusCode,
+        body,
+        corsHeaders,
+      };
     }
   },
 };

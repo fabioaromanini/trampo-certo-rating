@@ -24,7 +24,7 @@ _This rating is completely random_
 **Core**
 
 - ~~Add serverless config~~
-- Endpoint for querying CPF random rates
+- ~~Endpoint for querying CPF random rates~~
 
 **Extra**
 
@@ -38,3 +38,4 @@ _This rating is completely random_
 
 1. Add serverless config
 2. Automate deploys with circle-ci
+3. Endpoint for querying CPF random rates
