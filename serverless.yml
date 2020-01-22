@@ -25,6 +25,13 @@ functions:
           path: cpf_query
           method: get
           cors: true
+  setRating:
+    handler: src/handlers.setRating
+    events:
+      - http:
+          path: rating
+          method: post
+          cors: true
 
 custom:
   ratingsByCpfTableName: ${self:provider.stage}-ratings-by-cpf
