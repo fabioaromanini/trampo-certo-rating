@@ -1,8 +1,17 @@
-const allowedValues = ['good', 'bad', 'unkown'];
+const AWS = require('aws-sdk');
+
+const dbClient = new AWS.DynamoDB.DocumentClient();
 
 module.exports = {
-  getRatingByCpf: cpf => {
-    const randomInt = Number.parseInt(Math.random() * 100);
-    return allowedValues[randomInt % 3];
+  getRatingByCpf: async cpf => {
+    const response = await dbClient
+      .get({
+        TableName: process.env.RATINGS_BY_CPF_TABLE,
+        Key: { cpf },
+      })
+      .promise();
+    if (response.Item) {
+      return response.Item.rating;
+    } else return 'unknown';
   },
 };

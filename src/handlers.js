@@ -10,8 +10,10 @@ module.exports = {
     let body, statusCode;
     try {
       const { cpf } = event.queryStringParameters;
+      const ratingByCpf = await ratingController.getRatingByCpf(cpf);
+
       statusCode = 200;
-      body = JSON.stringify(ratingController.getRatingByCpf(cpf));
+      body = JSON.stringify(ratingByCpf);
     } catch (e) {
       if (!event.queryStringParameters || e.message === '400') {
         statusCode = 400;
