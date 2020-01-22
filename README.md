@@ -47,7 +47,7 @@ if history false or undefined
 **Set Ratings for CPF**
 
 POST
-https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/ratings
+https://fpzksjskka.execute-api.us-east-1.amazonaws.com/prod/ratings
 
 Expected input:
 
