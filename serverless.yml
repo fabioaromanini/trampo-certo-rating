@@ -8,6 +8,14 @@ provider:
   stage: ${opt:stage, 'dev'}
   environment:
     RATINGS_BY_CPF_TABLE: ${self:custom.ratingsByCpfTableName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:DeleteItem
+        - dynamodb:Scan
+      Resource: 'arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.ratingsByCpfTableName}'
 
 functions:
   cpfQuery:
