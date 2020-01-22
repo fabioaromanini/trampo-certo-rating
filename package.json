@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fabioaromanini/trampo-certo-rating/issues"
   },
-  "homepage": "https://github.com/fabioaromanini/trampo-certo-rating#readme"
+  "homepage": "https://github.com/fabioaromanini/trampo-certo-rating#readme",
+  "devDependencies": {
+    "serverless": "^1.61.3"
+  }
 }
