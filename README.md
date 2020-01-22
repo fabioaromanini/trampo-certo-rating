@@ -6,7 +6,7 @@ Rest API that allows fake rates retrieval for valid CPFs (SSN-like document for 
 
 Query Endpoint
 
-https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/cpf_query=<CPF_NUMBER>
+https://x4v87brdo7.execute-api.us-east-1.amazonaws.com/prod/cpf_query?cpf=<CPF_NUMBER>
 
 Expected Response:
 
